@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+      
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'word/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper well">
+            <h3>Randome word (attempt #<b>{{request.session.count}} </b>)</h3>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <div class="word well">
+                    {{ request.session.random_word }}
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary" value="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

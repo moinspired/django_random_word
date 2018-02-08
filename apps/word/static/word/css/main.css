@@ -1,0 +1,14 @@
+.word {
+    border: 1px solid black;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 200px;
+}
